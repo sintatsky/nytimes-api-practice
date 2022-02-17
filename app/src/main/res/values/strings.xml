@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ASTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="review_title_description">review_title</string>
+    <string name="error_message_load_state">error_message_load_state</string>
+    <string name="retry_load">retry_load</string>
+</resources>
