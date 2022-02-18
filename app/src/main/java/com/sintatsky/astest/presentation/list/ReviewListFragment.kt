@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.sintatsky.astest.databinding.FragmentReviewListBinding
+import com.sintatsky.astest.presentation.adapters.ReviewListAdapter
+import com.sintatsky.astest.presentation.adapters.StateAdapter
 import com.sintatsky.astest.presentation.app.ReviewApp
 import com.sintatsky.astest.presentation.app.ViewModelFactory
-import com.sintatsky.astest.presentation.adapters.ReviewListAdapter
 import com.sintatsky.astest.presentation.viewmodel.ReviewViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -47,15 +50,18 @@ class ReviewListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         reviewAdapter = ReviewListAdapter()
-        binding.rvReviewList.adapter = reviewAdapter
+        binding.rvReviewList.adapter = reviewAdapter.withLoadStateHeaderAndFooter(
+            header = StateAdapter(),
+            footer = StateAdapter { reviewAdapter.retry() })
         viewModel = ViewModelProvider(this, viewModelFactory)[ReviewViewModel::class.java]
-        viewModel.reviewList.observe(viewLifecycleOwner, Observer {
-            reviewAdapter.submitList(it.map { it })
-        })
-    }
 
+        lifecycleScope.launch {
+            viewModel.reviewList.collect {
+                reviewAdapter.submitData(it)
+            }
+        }
+    }
 
     override fun onDestroy() {
         _binding = null

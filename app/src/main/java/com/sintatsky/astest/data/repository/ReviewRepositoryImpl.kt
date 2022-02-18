@@ -1,34 +1,29 @@
 package com.sintatsky.astest.data.repository
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
-import com.sintatsky.astest.data.database.ReviewDao
-import com.sintatsky.astest.data.mapper.ReviewMapper
-import com.sintatsky.astest.data.network.ReviewApi
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.sintatsky.astest.data.paging.ReviewPagingSource
 import com.sintatsky.astest.domain.entity.ReviewResult
 import com.sintatsky.astest.domain.repository.ReviewRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class ReviewRepositoryImpl @Inject constructor(
-    private val mapper: ReviewMapper,
-    private val reviewDao: ReviewDao,
-    private val reviewApi: ReviewApi
+    private val reviewPagingSource: ReviewPagingSource,
 ) : ReviewRepository {
 
-    override fun getReviewList(): LiveData<List<ReviewResult>> {
-        return Transformations.map(reviewDao.getReviewList()) {
-            it.map { mapper.mapFromDbModelToEntity(it) }
-        }
-    }
-
-    override suspend fun loadData() {
-            val reviewList = reviewApi.getMovieReviews(1)
-            reviewDao.insertReviewList(
-                reviewList.results.map {
-                    Log.d("LOAD_DATA", it.toString())
-                    mapper.mapFromEntityToDbModel(it)
-                }
-            )
+    override fun loadData(): Flow<PagingData<ReviewResult>> {
+        return Pager(
+            PagingConfig(
+                pageSize = 20,
+                enablePlaceholders = true,
+                prefetchDistance = 10,
+                maxSize = 100
+            ),
+            pagingSourceFactory = {
+                reviewPagingSource
+            }
+        ).flow
     }
 }

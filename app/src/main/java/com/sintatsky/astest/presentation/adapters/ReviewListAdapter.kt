@@ -2,6 +2,7 @@ package com.sintatsky.astest.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.sintatsky.astest.databinding.ItemReviewBinding
 import com.sintatsky.astest.domain.entity.ReviewResult
 
 class ReviewListAdapter :
-    ListAdapter<ReviewResult, ReviewListAdapter.ReviewViewHolder>(ReviewListDiffCallback()) {
+    PagingDataAdapter<ReviewResult, ReviewListAdapter.ReviewViewHolder>(ReviewListDiffCallback()) {
 
     class ReviewViewHolder(val binding: ItemReviewBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -34,10 +35,10 @@ class ReviewListAdapter :
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {
         val review = getItem(position)
         with(holder.binding) {
-            tvTitle.text = review.display_title
-            tvShortDescription.text = review.summary_short
-            tvAuthor.text = review.byline
-            Glide.with(root).load(review.multimedia.src).centerCrop().into(ivTitle)
+            tvTitle.text = review?.display_title
+            tvShortDescription.text = review?.summary_short
+            tvAuthor.text = review?.byline
+            Glide.with(root).load(review?.multimedia?.src).centerCrop().into(ivTitle)
         }
     }
 
