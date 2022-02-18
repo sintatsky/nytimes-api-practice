@@ -1,4 +1,4 @@
-package com.sintatsky.astest.presentation.app
+package com.sintatsky.astest.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

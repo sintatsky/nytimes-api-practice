@@ -1,4 +1,4 @@
-package com.sintatsky.astest.presentation.app
+package com.sintatsky.astest.presentation
 
 import android.app.Application
 import com.sintatsky.astest.di.component.DaggerAppComponent

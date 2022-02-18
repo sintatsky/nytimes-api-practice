@@ -16,7 +16,6 @@ interface ReviewApi {
 
     companion object {
         private const val QUERY_PARAM_OFFSET = "offset"
-        private const val QUERY_PARAM_PAGE_SIZE = "pageSize"
         private const val QUERY_PARAM_API_KEY = "api-key"
     }
 }
