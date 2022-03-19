@@ -12,7 +12,7 @@ import com.sintatsky.astest.domain.entity.ReviewResult
 
 class ReviewListAdapter :
     PagingDataAdapter<ReviewResult, ReviewListAdapter.ReviewViewHolder>(ReviewListDiffCallback()) {
-
+    var onBookmarkSelectedListener: OnBookmarkSelectedListener? = null
     class ReviewViewHolder(val binding: ItemReviewBinding) : RecyclerView.ViewHolder(binding.root)
 
     class ReviewListDiffCallback : DiffUtil.ItemCallback<ReviewResult>() {
@@ -39,7 +39,14 @@ class ReviewListAdapter :
             tvShortDescription.text = review?.summary_short
             tvAuthor.text = review?.byline
             Glide.with(root).load(review?.multimedia?.src).centerCrop().into(ivTitle)
+            ivBookmark.setOnClickListener {
+                onBookmarkSelectedListener?.onBookmarkClick()
+            }
         }
+    }
+
+    interface OnBookmarkSelectedListener{
+        fun onBookmarkClick()
     }
 
 }

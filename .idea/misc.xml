@@ -9,8 +9,30 @@
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/item_error_state.xml" value="0.21145833333333333" />
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/item_load_state.xml" value="0.2375" />
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/item_review.xml" value="0.2375" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.30625" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/ic_add_bookmark.xml" value="0.30625" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/ic_bookmark.xml" value="0.30625" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/ic_bottom_bookmark.xml" value="0.30153846153846153" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/ic_filter.xml" value="0.3807291666666667" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/splash_back.xml" value="0.3807291666666667" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/tab_indicator.xml" value="0.2796296296296296" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/drawable/tabs_selector.xml" value="0.23025641025641025" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/activity_main.xml" value="0.14739583333333334" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/activity_splash.xml" value="0.3645833333333333" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/content_splash.xml" value="0.3645833333333333" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/coordinator.xml" value="0.29010416666666666" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_article.xml" value="0.3645833333333333" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_bookmarks.xml" value="0.26003126628452317" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_content.xml" value="0.25" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_favorites.xml" value="0.29010416666666666" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_profile.xml" value="0.30416666666666664" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_review_list.xml" value="0.29213483146067415" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_splash.xml" value="0.14739583333333334" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/fragment_support.xml" value="0.29010416666666666" />
         <entry key="..\:/android/Projects/Test/app/src/main/res/layout/item_error_state.xml" value="0.21770833333333334" />
         <entry key="..\:/android/Projects/Test/app/src/main/res/layout/item_load_state.xml" value="0.21770833333333334" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/layout/item_review.xml" value="0.29010416666666666" />
+        <entry key="..\:/android/Projects/Test/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3645833333333333" />
       </map>
     </option>
   </component>

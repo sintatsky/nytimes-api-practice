@@ -5,14 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.sintatsky.astest.databinding.FragmentReviewListBinding
-import com.sintatsky.astest.presentation.adapters.ReviewListAdapter
-import com.sintatsky.astest.presentation.adapters.StateAdapter
 import com.sintatsky.astest.presentation.ReviewApp
 import com.sintatsky.astest.presentation.ViewModelFactory
+import com.sintatsky.astest.presentation.adapters.ReviewListAdapter
+import com.sintatsky.astest.presentation.adapters.StateAdapter
 import com.sintatsky.astest.presentation.viewmodel.ReviewViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -51,6 +52,16 @@ class ReviewListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         reviewAdapter = ReviewListAdapter()
+        reviewAdapter.onBookmarkSelectedListener =
+            object : ReviewListAdapter.OnBookmarkSelectedListener {
+                override fun onBookmarkClick() {
+                    Toast.makeText(
+                        requireContext(),
+                        "saved on bookmarks",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         binding.rvReviewList.adapter = reviewAdapter.withLoadStateHeaderAndFooter(
             header = StateAdapter(),
             footer = StateAdapter { reviewAdapter.retry() })

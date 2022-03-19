@@ -2,13 +2,16 @@ package com.sintatsky.astest.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.sintatsky.astest.R
 import com.sintatsky.astest.databinding.ActivityMainBinding
-import com.sintatsky.astest.presentation.list.ReviewListFragment
-import com.sintatsky.astest.presentation.splash.SplashFragment
+import com.sintatsky.astest.presentation.fragments.BookmarksFragment
+import com.sintatsky.astest.presentation.fragments.ContentFragment
+import com.sintatsky.astest.presentation.fragments.ProfileFragment
+import com.sintatsky.astest.presentation.fragments.SupportFragment
 
-class MainActivity : AppCompatActivity(),
-    SplashFragment.SplashScreenListener {
+
+class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -17,19 +20,36 @@ class MainActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        supportActionBar?.hide()
-        setupSplashScreen()
+
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_nav_content -> {
+                    setupFragment(ContentFragment.newInstance())
+                    true
+                }
+                R.id.bottom_nav_profile -> {
+                    setupFragment(ProfileFragment.newInstance())
+                    true
+                }
+                R.id.bottom_nav_support -> {
+                    setupFragment(SupportFragment.newInstance())
+                    true
+                }
+                R.id.bottom_nav_bookmarks -> {
+                    setupFragment(BookmarksFragment.newInstance())
+                    true
+                }
+                else -> false
+            }
+        }
+        if (savedInstanceState == null) {
+            binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_content
+        }
     }
 
-    private fun setupSplashScreen() {
+    private fun setupFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.frameContainer, SplashFragment.newInstance())
-            .commit()
-    }
-
-    override fun setupMainFragment() {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frameContainer, ReviewListFragment.newInstance())
+            .replace(R.id.frameContainer, fragment)
             .commit()
     }
 }

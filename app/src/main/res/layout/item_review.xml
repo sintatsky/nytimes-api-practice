@@ -32,7 +32,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivBookmark"
             app:layout_constraintStart_toEndOf="@+id/ivTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,6 +61,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTitle"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toTopOf="@+id/tvShortDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

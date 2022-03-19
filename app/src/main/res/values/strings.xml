@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">movie review</string>
+    <string name="app_name">NYTimes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="review_title_description">review_title</string>
     <string name="error_message_load_state">error_message_load_state</string>
     <string name="retry_load">reload</string>
+    <string name="content_bottom_nav">content</string>
+    <string name="profile_bottom_nav">profile</string>
+    <string name="support_bottom_nav">support</string>
+    <string name="fav_bottom_nav">bookmarks</string>
+    <string name="filter_image_button_desc">filterImageButton</string>
+
 </resources>
