@@ -1,4 +1,4 @@
-package com.sintatsky.astest.presentation.list
+package com.sintatsky.astest.presentation.bottom_items
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,17 +8,19 @@ import androidx.fragment.app.Fragment
 import com.sintatsky.astest.R
 
 
-class ArticleFragment : Fragment() {
+class BookmarksFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_article, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_bookmarks, container, false)
     }
 
+
+
     companion object {
-        fun newInstance() = ArticleFragment()
+        fun newInstance() = BookmarksFragment()
     }
 }

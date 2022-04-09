@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.sintatsky.astest.R
 import com.sintatsky.astest.databinding.ActivityMainBinding
-import com.sintatsky.astest.presentation.fragments.BookmarksFragment
-import com.sintatsky.astest.presentation.fragments.ContentFragment
-import com.sintatsky.astest.presentation.fragments.ProfileFragment
-import com.sintatsky.astest.presentation.fragments.SupportFragment
+import com.sintatsky.astest.presentation.bottom_items.BookmarksFragment
+import com.sintatsky.astest.presentation.bottom_items.ContentFragment
+import com.sintatsky.astest.presentation.bottom_items.ProfileFragment
+import com.sintatsky.astest.presentation.bottom_items.SupportFragment
 
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.sintatsky.astest.presentation.fragments
+package com.sintatsky.astest.presentation.bottom_items
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,17 +8,17 @@ import android.view.ViewGroup
 import com.sintatsky.astest.R
 
 
-class SupportFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_support, container, false)
+
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
     companion object {
-        fun newInstance() = SupportFragment()
+        fun newInstance() = ProfileFragment()
     }
 }

@@ -1,4 +1,4 @@
-package com.sintatsky.astest.presentation.list
+package com.sintatsky.astest.presentation.tab_items
 
 import android.content.Context
 import android.os.Bundle

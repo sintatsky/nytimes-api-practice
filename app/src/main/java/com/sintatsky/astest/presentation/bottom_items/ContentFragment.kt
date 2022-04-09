@@ -1,18 +1,17 @@
-package com.sintatsky.astest.presentation.fragments
+package com.sintatsky.astest.presentation.bottom_items
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sintatsky.astest.R
 import com.sintatsky.astest.databinding.FragmentContentBinding
 import com.sintatsky.astest.presentation.adapters.ViewPagerAdapter
-import com.sintatsky.astest.presentation.list.ArticleFragment
-import com.sintatsky.astest.presentation.list.ReviewListFragment
+import com.sintatsky.astest.presentation.tab_items.ArticleFragment
+import com.sintatsky.astest.presentation.tab_items.ReviewListFragment
 
 class ContentFragment : Fragment() {
 
@@ -20,16 +19,14 @@ class ContentFragment : Fragment() {
         ReviewListFragment.newInstance(),
         ArticleFragment.newInstance(),
         ArticleFragment.newInstance(),
-        ArticleFragment.newInstance(),
         ArticleFragment.newInstance()
     )
 
     private val fragListTitles = listOf(
         "review",
-        "article",
-        "news",
-        "music",
-        "video",
+        "books",
+        "archive",
+        "most popular"
     )
 
     private var _binding: FragmentContentBinding? = null
