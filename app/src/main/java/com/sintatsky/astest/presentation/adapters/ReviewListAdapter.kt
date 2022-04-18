@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sintatsky.astest.databinding.ItemReviewBinding
@@ -12,7 +11,7 @@ import com.sintatsky.astest.domain.entity.ReviewResult
 
 class ReviewListAdapter :
     PagingDataAdapter<ReviewResult, ReviewListAdapter.ReviewViewHolder>(ReviewListDiffCallback()) {
-    var onBookmarkSelectedListener: OnBookmarkSelectedListener? = null
+    var onReviewItemSelectedListener: OnReviewItemSelectedListener? = null
     class ReviewViewHolder(val binding: ItemReviewBinding) : RecyclerView.ViewHolder(binding.root)
 
     class ReviewListDiffCallback : DiffUtil.ItemCallback<ReviewResult>() {
@@ -40,13 +39,17 @@ class ReviewListAdapter :
             tvAuthor.text = review?.byline
             Glide.with(root).load(review?.multimedia?.src).centerCrop().into(ivTitle)
             ivBookmark.setOnClickListener {
-                onBookmarkSelectedListener?.onBookmarkClick()
+                onReviewItemSelectedListener?.onBookmarkClick()
+            }
+            root.setOnClickListener {
+                onReviewItemSelectedListener?.onRootItemClick(review?.link?.url)
             }
         }
     }
 
-    interface OnBookmarkSelectedListener{
+    interface OnReviewItemSelectedListener{
         fun onBookmarkClick()
+        fun onRootItemClick(link: String?)
     }
 
 }

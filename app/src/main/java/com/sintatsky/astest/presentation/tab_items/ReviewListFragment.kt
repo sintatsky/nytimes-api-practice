@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.sintatsky.astest.R
 import com.sintatsky.astest.databinding.FragmentReviewListBinding
 import com.sintatsky.astest.presentation.ReviewApp
 import com.sintatsky.astest.presentation.ViewModelFactory
@@ -52,14 +53,20 @@ class ReviewListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         reviewAdapter = ReviewListAdapter()
-        reviewAdapter.onBookmarkSelectedListener =
-            object : ReviewListAdapter.OnBookmarkSelectedListener {
+        reviewAdapter.onReviewItemSelectedListener =
+            object : ReviewListAdapter.OnReviewItemSelectedListener {
                 override fun onBookmarkClick() {
                     Toast.makeText(
                         requireContext(),
                         "saved on bookmarks",
                         Toast.LENGTH_SHORT
                     ).show()
+                }
+
+                override fun onRootItemClick(link: String?) {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.frameContainer, ReviewDetailFragment.newInstance(link))
+                        .commit()
                 }
             }
         binding.rvReviewList.adapter = reviewAdapter.withLoadStateHeaderAndFooter(
