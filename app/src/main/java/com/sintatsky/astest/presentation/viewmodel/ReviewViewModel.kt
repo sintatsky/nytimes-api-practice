@@ -1,5 +1,6 @@
 package com.sintatsky.astest.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
@@ -17,9 +18,10 @@ class ReviewViewModel @Inject constructor(
         loadData()
     }
 
-    private fun loadData() {
+     private fun loadData() {
         viewModelScope.launch {
-            loadDataUseCase().cachedIn(viewModelScope)
+           loadDataUseCase()
+            Log.d("LOG", "ReviewViewModel: ${reviewList}")
         }
     }
 }

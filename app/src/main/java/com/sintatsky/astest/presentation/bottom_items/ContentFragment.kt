@@ -19,14 +19,18 @@ class ContentFragment : Fragment() {
         ReviewListFragment.newInstance(),
         ArticleFragment.newInstance(),
         ArticleFragment.newInstance(),
+        ArticleFragment.newInstance(),
+        ArticleFragment.newInstance(),
         ArticleFragment.newInstance()
     )
 
     private val fragListTitles = listOf(
-        "review",
-        "books",
-        "archive",
-        "most popular"
+        "reviews",
+        "arts",
+        "home",
+        "science",
+        "us",
+        "world"
     )
 
     private var _binding: FragmentContentBinding? = null
@@ -62,6 +66,10 @@ class ContentFragment : Fragment() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.searchFrame, SearchFragment.newInstance())
+            .commit()
     }
 
     override fun onDestroy() {

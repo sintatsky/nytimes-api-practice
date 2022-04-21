@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sintatsky.astest.databinding.ItemReviewBinding
-import com.sintatsky.astest.domain.entity.ReviewResult
+import com.sintatsky.astest.domain.entity.review.ReviewResult
 
 class ReviewListAdapter :
     PagingDataAdapter<ReviewResult, ReviewListAdapter.ReviewViewHolder>(ReviewListDiffCallback()) {

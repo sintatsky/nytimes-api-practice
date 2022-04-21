@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sintatsky.astest.databinding.ChatBotItemBinding
-import com.sintatsky.astest.domain.entity.SupportMessage
+import com.sintatsky.astest.domain.entity.review.SupportMessage
 import com.sintatsky.astest.utils.Constants.RECEIVE_ID
 import com.sintatsky.astest.utils.Constants.SEND_ID
 
