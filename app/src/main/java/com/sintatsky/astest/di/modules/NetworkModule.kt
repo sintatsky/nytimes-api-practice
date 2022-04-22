@@ -4,6 +4,7 @@ import com.sintatsky.astest.data.network.ReviewApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
@@ -19,6 +20,6 @@ class NetworkModule {
     }
 
     companion object {
-        private const val BASE_URL = "https://api.nytimes.com/svc/movies/v2/"
+        private const val BASE_URL = "https://api.nytimes.com/svc/"
     }
 }

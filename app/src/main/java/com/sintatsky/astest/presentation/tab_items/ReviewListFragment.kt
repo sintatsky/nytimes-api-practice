@@ -2,6 +2,7 @@ package com.sintatsky.astest.presentation.tab_items
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -73,7 +74,7 @@ class ReviewListFragment : Fragment() {
             header = StateAdapter(),
             footer = StateAdapter { reviewAdapter.retry() })
         viewModel = ViewModelProvider(this, viewModelFactory)[ReviewViewModel::class.java]
-
+        Log.d("LOG","review fr: ${viewModel.reviewList.toString()}")
         lifecycleScope.launch {
             viewModel.reviewList.collect {
                 reviewAdapter.submitData(it)

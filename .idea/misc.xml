@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/drawable/ic_bookmark.xml" value="0.251" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/drawable/round_txt_input_layout.xml" value="0.249" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_arts.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_content.xml" value="0.33" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_home.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_review_list.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_science.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_search.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_us_news.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/fragment_world_news.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/item_review.xml" value="0.2390625" />
+        <entry key="..\:/Users/Kreslov/StudioProjects/nytimes-api-practice/app/src/main/res/layout/item_search.xml" value="0.2390625" />
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/activity_main.xml" value="0.2375" />
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/fragment_review_list.xml" value="0.2375" />
         <entry key="..\:/android/Projects/ASTest/app/src/main/res/layout/fragment_splash.xml" value="0.2375" />

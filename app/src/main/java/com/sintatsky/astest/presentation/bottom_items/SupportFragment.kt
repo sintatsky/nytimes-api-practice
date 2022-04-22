@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sintatsky.astest.databinding.FragmentSupportBinding
-import com.sintatsky.astest.domain.entity.SupportMessage
+import com.sintatsky.astest.domain.entity.review.SupportMessage
 import com.sintatsky.astest.presentation.adapters.ChatBotAdapter
 import com.sintatsky.astest.utils.BotResponse
 import com.sintatsky.astest.utils.Constants.OPEN_GOOGLE

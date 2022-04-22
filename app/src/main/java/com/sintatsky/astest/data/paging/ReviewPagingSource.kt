@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.sintatsky.astest.BuildConfig.API_KEY
 import com.sintatsky.astest.data.network.ReviewApi
-import com.sintatsky.astest.domain.entity.ReviewResult
+import com.sintatsky.astest.domain.entity.review.ReviewResult
 import javax.inject.Inject
 
 class ReviewPagingSource @Inject constructor(
