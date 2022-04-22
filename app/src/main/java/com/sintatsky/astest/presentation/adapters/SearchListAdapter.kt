@@ -12,12 +12,10 @@ import com.sintatsky.astest.databinding.ItemSearchBinding
 import com.sintatsky.astest.domain.entity.search.Doc
 import com.sintatsky.astest.domain.entity.search.Multimedia
 
-class SearchListAdapter :
-    PagingDataAdapter<Doc, SearchListAdapter.SearchViewHolder>(SearchDiffCallback()) {
-    var onSearchArticleItemSelectedListener: OnSearchArticleItemSelectedListener? = null
+class SearchListAdapter : PagingDataAdapter<Doc, SearchListAdapter.SearchViewHolder>(SearchDiffCallback()) {
 
-    class SearchViewHolder(val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root)
-    class SearchDiffCallback : DiffUtil.ItemCallback<Doc>() {
+    class SearchViewHolder(val binding: ItemSearchBinding): RecyclerView.ViewHolder(binding.root)
+    class SearchDiffCallback: DiffUtil.ItemCallback<Doc>() {
         override fun areItemsTheSame(oldItem: Doc, newItem: Doc): Boolean {
             return oldItem._id == newItem._id
         }
@@ -43,26 +41,16 @@ class SearchListAdapter :
         holder.binding.tvByLiner.text = doc?.byline?.original
         val multimedia = doc?.multimedia as ArrayList<Multimedia>
         var imageUrl = ""
-        for (media in multimedia) {
-            if (media.type == "image" && media.subType == "master495") {
+        for (media in multimedia){
+            if (media.type == "image" && media.subType == "master495"){
                 imageUrl = BASE_IMAGE_URL + media.url
                 break
             }
         }
-        Glide.with(holder.binding.root)
-            .load(imageUrl)
-            .centerCrop()
-            .into(holder.binding.ivTitle)
-        holder.binding.root.setOnClickListener {
-            doc.web_url.let { it1 -> onSearchArticleItemSelectedListener?.onArticleItemClick(it1) }
-        }
+        Glide.with(holder.binding.root).load(imageUrl).centerCrop().into(holder.binding.ivTitle)
     }
 
-    interface OnSearchArticleItemSelectedListener {
-        fun onArticleItemClick(link: String)
-    }
-
-    companion object {
+    companion object{
         const val BASE_IMAGE_URL = "https://www.nytimes.com/"
     }
 }

@@ -20,7 +20,7 @@ class SearchPagingSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Doc> {
         val pageIndex = params.key ?: DEFAULT_PAGE_INDEX
         return try {
-            val resp = reviewApi.getSearchArticles(pageIndex)
+            val resp = reviewApi.getSearchArticles(pageIndex, "")
             val docs = resp.response.docs
             val nextKey =
                 if (docs.isEmpty()) null else pageIndex + DEFAULT_OFFSET_VALUE

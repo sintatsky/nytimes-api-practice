@@ -26,6 +26,12 @@ interface ReviewApi {
         @Query(QUERY_PARAM_API_KEY) apiKey: String = API_KEY
     ): SearchResponse
 
+    @GET("search/v2/articlesearch.json")
+    suspend fun getSearchArticles(
+        @Query(QUERY_PARAM_SEARCH) q: String,
+        @Query(QUERY_PARAM_API_KEY) apiKey: String = API_KEY
+    ): retrofit2.Response<SearchResponse>
+
 
     companion object {
         private const val QUERY_PARAM_OFFSET = "offset"

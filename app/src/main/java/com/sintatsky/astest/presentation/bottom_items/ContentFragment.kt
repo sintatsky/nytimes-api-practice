@@ -10,18 +10,17 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.sintatsky.astest.R
 import com.sintatsky.astest.databinding.FragmentContentBinding
 import com.sintatsky.astest.presentation.adapters.ViewPagerAdapter
-import com.sintatsky.astest.presentation.tab_items.ArticleFragment
-import com.sintatsky.astest.presentation.tab_items.ReviewListFragment
+import com.sintatsky.astest.presentation.tab_items.*
 
 class ContentFragment : Fragment() {
 
     private val fragList = listOf(
         ReviewListFragment.newInstance(),
-        ArticleFragment.newInstance(),
-        ArticleFragment.newInstance(),
-        ArticleFragment.newInstance(),
-        ArticleFragment.newInstance(),
-        ArticleFragment.newInstance()
+        ArtsFragment.newInstance(),
+        HomeFragment.newInstance(),
+        ScienceFragment.newInstance(),
+        UsNewsFragment.newInstance(),
+        WorldNewsFragment.newInstance()
     )
 
     private val fragListTitles = listOf(
@@ -49,6 +48,7 @@ class ContentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        launchTopLine()
         val adapter = ViewPagerAdapter(requireActivity(), fragList)
         binding.viewPager.adapter = adapter
         TabLayoutMediator(binding.tabLayout, binding.viewPager){
@@ -66,7 +66,9 @@ class ContentFragment : Fragment() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+    }
 
+    private fun launchTopLine() {
         parentFragmentManager.beginTransaction()
             .replace(R.id.searchFrame, SearchFragment.newInstance())
             .commit()

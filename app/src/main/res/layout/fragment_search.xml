@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="wrap_content"
     tools:context=".presentation.bottom_items.SearchFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayoutSearch"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/round_txt_input_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,17 +20,18 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search"
+            android:drawableStart="@drawable/ic_search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
-            android:inputType="text" />
+            android:inputType="text"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearchList"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         tools:listitem="@layout/item_search"
